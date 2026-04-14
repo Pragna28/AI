@@ -1,7 +1,14 @@
 # Azure services for deploying Python ML
 
 <p align="center">
-  <img width="800" src="../images/decision_python_scoring.png">
+  <img width="800" src="../images/decision_python_scoring.png" alt="Decision matrix for Python scoring on Azure">
 </p>
 
-When deploying ML models in Python there are two core questions. The first is will it be real time and whether the model is a deep learning model. For deploying deep learning models that require real time we recommend Azure Kubernetes Services (AKS) with GPUs. For a tutorial on how to do that look at [AKS w/GPU](https://github.com/Microsoft/AKSDeploymentTutorialAML). For deploying deep learning models for batch scoring we recommend using AzureML pipelines with GPUs, for a tutorial on how to do that look [AzureML Pipelines w/GPU](https://github.com/Azure/Batch-Scoring-Deep-Learning-Models-With-AML). For non deep learning models we recommend you use the same services but without GPUs. For a tutorial on deploying classical ML models for real time scoring look [AKS](https://github.com/Microsoft/MLAKSDeployAML) and for batch scoring [AzureML Pipelines](https://github.com/Microsoft/AMLBatchScoringPipeline)
+When deploying machine learning models in Python, your recommended Azure service depends on whether you need real-time or batch scoring, and whether you are using deep learning or classical ML. 
+
+Use the matrix below to find the right service and tutorial for your workload:
+
+| Model Type | Real-Time Scoring | Batch Scoring |
+| :--- | :--- | :--- |
+| **Deep Learning** | **AKS (with GPUs)**<br>👉 [View Tutorial](https://github.com/Microsoft/AKSDeploymentTutorialAML) | **AzureML Pipelines (with GPUs)**<br>👉 [View Tutorial](https://github.com/Azure/Batch-Scoring-Deep-Learning-Models-With-AML) |
+| **Classical ML** | **AKS (CPU only)**<br>👉 [View Tutorial](https://github.com/Microsoft/MLAKSDeployAML) | **AzureML Pipelines (CPU only)**<br>👉 [View Tutorial](https://github.com/Microsoft/AMLBatchScoringPipeline) |
